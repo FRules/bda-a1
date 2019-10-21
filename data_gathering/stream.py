@@ -2,7 +2,7 @@ from __future__ import print_function
 import tweepy
 import json
 from pymongo import MongoClient
-from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
+from data_gathering.config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
 
 
 MONGO_HOST = 'mongodb://localhost/test'

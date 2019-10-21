@@ -3,7 +3,6 @@ from __future__ import division
 from pymongo import MongoClient
 import matplotlib.pyplot as plt
 from collections import Counter
-import numpy as np
 import operator
 
 # Establish connection with database
