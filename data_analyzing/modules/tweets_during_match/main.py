@@ -31,10 +31,8 @@ def get_tweets_per_minute(twitter_bundesliga_collection, hashtag, kickoff: datet
                                                 timestamp_half_time_end, timestamp_final_whistle)
     # number_after_match_tweets = get_after_match_tweets_count(twitter_bundesliga_collection, hashtag, timestamp_final_whistle)
 
-    x1 = list(first_half_tweets)
-    first_half = get_tweet_distribution_for_first_half(x1, kickoff)
-    x3 = list(second_half_tweets)
-    second_half = get_tweet_distribution_for_second_half(x3, kickoff)
+    first_half = get_tweet_distribution_for_first_half(list(first_half_tweets), kickoff)
+    second_half = get_tweet_distribution_for_second_half(list(second_half_tweets), kickoff)
     merged = {**first_half, **second_half}
     return merged
 
