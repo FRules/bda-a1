@@ -12,7 +12,6 @@ DURATION_SECOND_HALF = 50  # extended time + buffer
 
 def analyze(twitter_bundesliga_collection, kickoffs: dict, highlights: dict):
     for hashtag, kickoff in kickoffs.items():
-        print(hashtag)
         tweets_per_minute = get_tweets_per_minute(twitter_bundesliga_collection, hashtag, kickoff)
         plot_results(tweets_per_minute, hashtag[1:], highlights[hashtag])
 
@@ -179,10 +178,8 @@ def plot_results(tweets_per_minute, plot_name, highlights):
     plt.xticks(range(len(tweets_per_minute)), list(tweets_per_minute.keys()), rotation=90)
     i = 0
     for goal in highlights["goals"]:
-        print(goal)
         barlist[goal].set_color("g")
     for red_card in highlights["red_cards"]:
-        print(red_card)
         barlist[red_card].set_color("r")
 
     for label in ax.get_xaxis().get_ticklabels():
