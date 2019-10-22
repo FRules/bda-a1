@@ -17,6 +17,7 @@ def analyze(twitter_bundesliga_collection, hashtags, plot_name):
 
 
 def plot_results(distribution, plot_name):
+    plt.figure()
     plt.bar(range(len(distribution)), list(distribution.values()), align='center')
     plt.xticks(range(len(distribution)), list(distribution.keys()), rotation=90)
     plt.gcf().subplots_adjust(bottom=0.25)
