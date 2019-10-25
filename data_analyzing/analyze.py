@@ -5,6 +5,7 @@ import datetime
 
 import data_analyzing.modules.most_discussed_matches.main as most_discussed_matches
 import data_analyzing.modules.tweets_during_match.main as tweets_during_match
+import data_analyzing.modules.sentiment_analysis.main as sentiment_analysis
 
 HASHTAGS = ["#SGEB04", '#RBLWOB', '#SVWBSC',
             '#F95M05', '#FCAFCB', '#FCUSCF',
@@ -37,8 +38,10 @@ def main():
     db = client.test
     twitter_bundesliga_collection = db.twitterBundesliga
 
-    tweets_during_match.analyze(twitter_bundesliga_collection, KICKOFFS, HIGHLIGHTS)
-    most_discussed_matches.analyze(twitter_bundesliga_collection, HASHTAGS, "most_discussed_matches")
+    # tweets_during_match.analyze(twitter_bundesliga_collection, KICKOFFS, HIGHLIGHTS)
+    # most_discussed_matches.analyze(twitter_bundesliga_collection, HASHTAGS, "most_discussed_matches")
+    sentiment_analysis.analyze(twitter_bundesliga_collection, HASHTAGS, KICKOFFS, HIGHLIGHTS,
+                               create_analysis_file=False)
 
 
 if __name__ == '__main__':
