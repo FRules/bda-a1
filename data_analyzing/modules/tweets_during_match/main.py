@@ -1,7 +1,6 @@
 import re
 from datetime import datetime
 from datetime import timedelta
-import numpy as np
 from matplotlib import pyplot as plt
 
 

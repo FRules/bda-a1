@@ -58,7 +58,6 @@ def __plot_results(distribution, plot_name, include_neutral=False):
 
     fig, ax = plt.subplots()
 
-
     if include_neutral:
         width = 0.2
         rectangle_1 = ax.bar(x - width, positive, width, color='g', label='Positive')

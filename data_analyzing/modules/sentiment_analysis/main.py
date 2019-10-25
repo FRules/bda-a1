@@ -19,6 +19,6 @@ def analyze(collection, hashtags, kickoffs, highlights, create_analysis_file, fe
     else:
         analysis_data = preprocessor.load_analysis_data(config.ANALYSIS_FILE_PATH)
 
-    ga.analyze(analysis_data, hashtags)
+    # ga.analyze(analysis_data, hashtags)
     ma.analyze(analysis_data, hashtags, kickoffs, highlights)
 
