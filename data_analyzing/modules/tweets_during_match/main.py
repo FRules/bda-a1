@@ -2,6 +2,7 @@ import re
 from datetime import datetime
 from datetime import timedelta
 from matplotlib import pyplot as plt
+import numpy as np
 
 
 DURATION_FIRST_HALF = 45
@@ -168,20 +169,29 @@ def get_timestamp_of_final_whistle(kickoff: datetime):
 
 
 def plot_results(tweets_per_minute, plot_name, highlights):
-    plt.figure()
-    barlist = plt.bar(range(len(tweets_per_minute)), list(tweets_per_minute.values()), align='center')
-    ax = plt.gca()
-    # plt.axis([0, 24, 0, 50])
-    plt.xticks(range(len(tweets_per_minute)), list(tweets_per_minute.keys()), rotation=90)
-    i = 0
+    fig, ax = plt.subplots(2, 1, figsize=(5, 5))
+    fig.suptitle("Amount of tweets per minute in match #" + plot_name)
+    for i in range(2):
+        barlist = ax[i].bar(range(len(tweets_per_minute)), list(tweets_per_minute.values()), align='center')
+
+        x = np.arange(len(list(tweets_per_minute)))
+        x_labels = list(tweets_per_minute.keys())
+
+        ax[i].set_ylabel('Number of tweets')
+        ax[i].set_xticks(x)
+        ax[i].set_xticklabels(x_labels, rotation=90)
+
+        j = 0
+        for label in ax[i].get_xaxis().get_ticklabels():
+            j += 1
+            if j % 5 != 1:
+                label.set_visible(False)
+
     for goal in highlights["goals"]:
         barlist[goal].set_color("g")
     for red_card in highlights["red_cards"]:
         barlist[red_card].set_color("r")
-
-    for label in ax.get_xaxis().get_ticklabels():
-        i += 1
-        if i % 5 != 1:
-            label.set_visible(False)
+    for var in highlights["var"]:
+        barlist[var].set_color("y")
 
     plt.savefig("data_analyzing/plots/tweets_during_match/" + plot_name + ".pdf")

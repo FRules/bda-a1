@@ -21,15 +21,15 @@ KICKOFFS = {"#SGEB04": datetime.datetime(2019, 10, 18, 20, 30, 00, 000),
             '#KOESCP': datetime.datetime(2019, 10, 20, 15, 30, 00, 000),
             '#TSGS04': datetime.datetime(2019, 10, 20, 18, 00, 00, 000)}
 
-HIGHLIGHTS = {"#SGEB04": {'goals': [4, 17, 83], 'red_cards': []},
-              '#RBLWOB': {'goals': [57, 85], 'red_cards': []},
-              '#SVWBSC': {'goals': [7, 70], 'red_cards': []},
-              '#F95M05': {'goals': [84], 'red_cards': [47]},
-              '#FCAFCB': {'goals': [1, 14, 52, 94], 'red_cards': []},
-              '#FCUSCF': {'goals': [1, 87], 'red_cards': []},
-              '#BVBBMG': {'goals': [61], 'red_cards': []},
-              '#KOESCP': {'goals': [12, 62, 86], 'red_cards': []},
-              '#TSGS04': {'goals': [73, 86], 'red_cards': []},
+HIGHLIGHTS = {"#SGEB04": {'goals': [4, 17, 83], 'red_cards': [], 'var': [72]},
+              '#RBLWOB': {'goals': [57, 85], 'red_cards': [], 'var': []},
+              '#SVWBSC': {'goals': [7, 70], 'red_cards': [], 'var': []},
+              '#F95M05': {'goals': [84], 'red_cards': [47], 'var': []},
+              '#FCAFCB': {'goals': [1, 14, 52, 94], 'red_cards': [], 'var': []},
+              '#FCUSCF': {'goals': [1, 87], 'red_cards': [], 'var': []},
+              '#BVBBMG': {'goals': [61], 'red_cards': [], 'var': [35]},
+              '#KOESCP': {'goals': [12, 62, 86], 'red_cards': [], 'var': [10]},
+              '#TSGS04': {'goals': [73, 86], 'red_cards': [], 'var': []},
               }
 
 

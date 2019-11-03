@@ -48,8 +48,8 @@ def analyze(analysis_data: list, hashtags: list, kickoff: list, highlights: list
             continue
         statistic[match_hashtag][minute][sentiment] += 1
 
-    __plot_results(statistic, "in_match_sentiment_analysis")
-    __plot_results(statistic, "in_match_sentiment_analysis_neutral", include_neutral=True)
+    __plot_results(statistic, "in_match")
+    __plot_results(statistic, "neutral_in_match", include_neutral=True)
 
 
 def __plot_results(distribution, plot_name, include_neutral=False):
