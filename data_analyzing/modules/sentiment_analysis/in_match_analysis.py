@@ -1,6 +1,7 @@
 from matplotlib import pyplot as plt
 from datetime import datetime, timedelta
 import numpy as np
+import pickle
 
 
 DURATION_FIRST_HALF = 45
@@ -50,6 +51,12 @@ def analyze(analysis_data: list, hashtags: list, kickoff: list, highlights: list
 
     __plot_results(statistic, "in_match")
     __plot_results(statistic, "neutral_in_match", include_neutral=True)
+    __save_statistic(statistic)
+
+
+def __save_statistic(statistic):
+    with open("data_analyzing/modules/sentiment_analysis/data/sentiment_map.txt", "wb") as fp:
+        pickle.dump(statistic, fp)
 
 
 def __plot_results(distribution, plot_name, include_neutral=False):
