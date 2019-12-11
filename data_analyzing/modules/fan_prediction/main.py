@@ -33,15 +33,15 @@ def analyze(twitter_bundesliga_collection, HASHTAGS):
         hashtag_latitudes_map[match_hashtag].append(lat)
         hashtag_longitudes_map[match_hashtag].append(lng)
 
-    # create_plot(longitudes, latitudes, HASHTAG_COORDINATES_MAP, filename="map.png")
-    # create_fanbase(longitudes, latitudes, HASHTAG_COORDINATES_MAP)
+    create_plot(longitudes, latitudes, HASHTAG_COORDINATES_MAP, filename="map.png")
+    fb.create_fanbase_for_all(longitudes, latitudes, HASHTAG_COORDINATES_MAP)
 
     team_fanbase_dict = fb.get_team_fanbase_dict()
 
     for key in hashtag_latitudes_map.keys():
-        # filename = key[1:].lower()
-        # create_plot(hashtag_longitudes_map[key], hashtag_latitudes_map[key], HASHTAG_COORDINATES_MAP,
-        #             cities_hashtag=key, filename="map_" + filename + ".png")
+        filename = key[1:].lower()
+        create_plot(hashtag_longitudes_map[key], hashtag_latitudes_map[key], HASHTAG_COORDINATES_MAP,
+                    cities_hashtag=key, filename="map_" + filename + ".png")
         team_fanbase_dict = fb.create_fanbase_for_match(hashtag_longitudes_map[key], hashtag_latitudes_map[key],
                                                         key, HASHTAG_COORDINATES_MAP, team_fanbase_dict)
     print(team_fanbase_dict)
