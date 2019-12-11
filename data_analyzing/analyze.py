@@ -61,7 +61,7 @@ def main():
     # sentiment_analysis.analyze(twitter_bundesliga_collection, HASHTAGS, KICKOFFS, HIGHLIGHTS,
     #                           create_analysis_file=False)
     # score_prediction.analyze(FANS)
-    fan_prediction.analyze(twitter_bundesliga_collection)
+    fan_prediction.analyze(twitter_bundesliga_collection, HASHTAGS)
 
 
 if __name__ == '__main__':

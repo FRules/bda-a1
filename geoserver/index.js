@@ -14,8 +14,6 @@ app.get("/countryCode", (req, res, next) => {
   res.json({"code": null, "error": "lat or lng not specified"});
   return;
  }
- console.log(req.query.lat);
- console.log(req.query.lng);
  grid.getCode(parseFloat(req.query.lat), parseFloat(req.query.lng), function(error, code) {
   res.json({"code": code, "error": error});
  })
